@@ -1,4 +1,6 @@
 import os
 import shutil
 
-shutil.move("C:\\Users\\bobei\\fol1\\bobob.txt", "C:\\Users\\bobei\\fol2\\bobob.txt")
+for root, subfolders, filenames in os.walk("C:\\Users\\bobei"):
+    print("the current folder is " + root)
+    print("the subfolders of " + root + "are" + subfolders)
