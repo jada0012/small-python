@@ -39,4 +39,3 @@ with smtplib.SMTP("smtp.gmail.com", 587) as smtp:
 
     smtp.sendmail(emailadd, "denise.bdixon@gmail.com", msg)
     smtp.sendmail(emailadd, "leon.dixon@gmail.com", msg)
-    smtp.sendmail(emailadd, "jadaimani2013@gmail.com", msg)
