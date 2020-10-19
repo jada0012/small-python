@@ -64,10 +64,10 @@ schedule.every().friday.at("10:55").do(spanclass)
 
 
 
-schedule.every()..at("12:05").do(chemclass)
-schedule.every()..at("12:05").do(econclass)
-schedule.every()..at("12:05").do(chemclass)
-schedule.every()..at("12:05").do(physclass)
+schedule.every().monday.at("12:05").do(chemclass)
+schedule.every().tuesday.at("12:05").do(econclass)
+schedule.every().wednesday.at("12:05").do(chemclass)
+schedule.every().thursday.at("12:05").do(physclass)
 #schedule.every()..at("12:05").do(itclass)
 
 
