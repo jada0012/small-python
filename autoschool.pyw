@@ -29,11 +29,11 @@ def demClub():
 def cfya():
     webbrowser.open_new_tab("https://zoom.us/j/99584273671?pwd=WisyTmp5M2pPcnEySUtvNHJ4RGxGUT09")
 
-schedule.every().monday.at("07:55").do(spanclass)
-schedule.every().tuesday.at("07:55").do(spanclass)
-schedule.every().wednesday.at("07:55").do(spanclass)
-schedule.every().thursday.at("07:55").do(spanclass)
-schedule.every().friday.at("07:55").do(spanclass)
+schedule.every().monday.at("08:00").do(spanclass)
+schedule.every().tuesday.at("08:00").do(spanclass)
+#schedule.every().wednesday.at("08:00").do(spanclass)
+schedule.every().thursday.at("08:00").do(mathclass)
+schedule.every().friday.at("08:00").do(engclass)
 
 # schedule.every().monday.at("08:35").do(engclass)
 # #schedule.every().tuesday.at("08:35").do(engclass)
