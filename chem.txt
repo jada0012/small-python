@@ -1,0 +1,45 @@
+what is anodising?
+Anodising is an electrochemical process used  to coat a metal (ususally aluminium, magnesium or titanium) in an oxide. The object you want to be coated is the anode, and the cathode is any conductive material. 
+Why?
+This is done to give the metal a corrosion-resistant, durable, decorative finish.
+since it  makes the metal easier to dye, and more wear-resistant 
+
+Color
+he colour of the metal depends on the voltage.
+the voltage determines the color of the metal being anodised. AS you can see, it moves from orange to green and back to orange.
+
+The voltage required by various solutions range from 1 to 300 V DC, although most fall in the range of 15 to 21 V.
+
+Higher voltages are typically required for thicker coatings formed in sulfuric and organic acid. The anodizing current varies with the area of aluminium being anodized and typically ranges from 30 to 300 A / m2.
+
+
+types
+there are three kinds of anodising. 
+sulfuric acid anodising,
+This is used for colouring anodised parts.
+An electrolytic solution and an electric current are used to coat the metal with aluminium oxide
+ chromic acid anodising, which is used for corrosion resistance,It works best on aluminium with few alloying elements, so the purer the aluminium, the bettwe it would work
+  and hard anodising, This is when a thicker oxide layer, about 25-100 micrometers is created using a higher concentration electrolyte and lower temperatures. .This is wear-resistant and is used in sliding systems.
+
+application
+Anodising is used on electronics, like phones and mp3 player to make them scratch-resistant
+For example, Apple anodises the titanium and aluminium surfaces of their iPods and laptops to make them more colourful and durable.herew we can see an exammeample of an anodised ipod
+its used on electronics, buildinng structure, jewelry, machine parts and household appliances. 
+
+advantages:
+: Anodised products are more durable as the aluminum oxide coating prevents excess wear and tear.
+: When a metal is anodised, dye adheres to it easilly because small pores are created as it is anodised. The dye is places there then sealed off so no colour escapes. This colour cannot wear away or be scratched off.\
+it is easiier to maintain as Anodised surfaces don't get scratched from cleaning or frequent handling.
+
+
+disadvantages:
+ anodised substances have a lower thermal conductivity level, which causes it to crack at temperatures more that 80°C
+
+
+
+
+
+
+Question : In the anodising of aluminium 13500C of charge was passed. What is the massed of the oxide formed at the anode.60
+
+the positive h ions move to the cathode, the negative oh to the anode. after the dc current passes through, oxygen is formed at the anode and reacts with the aluminium and a thin layer of aluminium oxide is formed. at the end, a layer of aluminium oxide forms that adheres perfectly to the aluminium
