@@ -35,11 +35,9 @@ schedule.every().tuesday.at("08:00").do(spanclass)
 schedule.every().thursday.at("08:00").do(mathclass)
 schedule.every().friday.at("08:00").do(engclass)
 
-# schedule.every().monday.at("08:35").do(engclass)
-# #schedule.every().tuesday.at("08:35").do(engclass)
-# schedule.every().wednesday.at("08:35").do(engclass)
-# schedule.every().thursday.at("08:35").do(engclass)
-# schedule.every().friday.at("08:35").do(engclass)
+schedule.every().monday.at('08:35').do(engclass)
+
+
 
 schedule.every().monday.at("09:45").do(physclass)
 schedule.every().tuesday.at("09:45").do(itclass)
@@ -48,11 +46,9 @@ schedule.every().thursday.at("09:45").do(econclass)
 schedule.every().friday.at("09:45").do(chemclass)
 
 
-#schedule.every().monday.at("10:20").do(class)
-#schedule.every().tuesday.at("10:20").do(class)
+
 schedule.every().wednesday.at("10:20").do(physclass)
-#schedule.every().thursday.at("10:20").do(class)
-#schedule.every().friday.at("10:20").do(class)
+
 
 
 
@@ -68,7 +64,7 @@ schedule.every().monday.at("12:05").do(chemclass)
 schedule.every().tuesday.at("12:05").do(econclass)
 schedule.every().wednesday.at("12:05").do(chemclass)
 schedule.every().thursday.at("12:05").do(physclass)
-#schedule.every()..at("12:05").do(itclass)
+
 
 
 
@@ -83,7 +79,7 @@ schedule.every().friday.at("12:40").do(econclass)
 
 
 schedule.every().monday.at("13:15").do(mathclass)
-schedule.every().tuesday.at("13:15").do(mathclass)
+
 schedule.every().wednesday.at("13:15").do(engclass)
 schedule.every().thursday.at("13:15").do(spanclass)
 schedule.every().friday.at("13:15").do(mathclass)

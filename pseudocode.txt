@@ -1,0 +1,4 @@
+get input from clipboard
+use the goodreads api to search it 
+get the first result
+add it to my tbr

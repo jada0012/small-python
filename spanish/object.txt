@@ -1,0 +1,39 @@
+menu
+shoe
+light
+suitcase
+hamburger
+book
+hotdog
+patty
+soup
+room
+ticket
+flight
+bed
+building
+car
+luggage
+travel agent
+desk
+chair
+taxi driver
+toast
+breakfast
+lunch
+dinner
+meal
+bill
+dessert
+tray
+waiter
+credit card
+appetizer
+main course
+mall
+beach
+terrace
+brochure
+party
+hotel
+fare
