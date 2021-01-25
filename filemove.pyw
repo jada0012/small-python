@@ -21,6 +21,10 @@ def filemover():
 
         elif file.endswith('.jpg') or file.endswith('.png') or file.endswith('.jpeg'):
             shutil.move(f'{source}\{file}', f'{source2}')
+        elif file.endswith('.docx') or file.endswith('.doc'):
+            shutil.move(f'{source}\{file}',f'{source}\word_docs' )
+        elif file.endswith('.pptx') or file.endswith('.ppt'):
+            shutil.move(f'{source}\{file}',f'{source}\ppts' )
         
 schedule.every(30).minutes.do(filemover)
 
