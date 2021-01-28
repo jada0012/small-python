@@ -8,25 +8,50 @@ source = r'D:\downloads'
 testi = 'this is called '
 files = os.listdir(source)
 source2 = r'D:\\Onedrive\\Pictures'
+folder = 'folderFolder'
 
 def filemover():
 
 
     for file in files:
         if file.endswith('.pdf'):
-            shutil.move(f'{source}\{file}', f'{source}\pdfs')
+            try:
+                shutil.move(f'{source}\{file}', f'{source}\pdfs')
+            except shutil.Error:
+                pass
 
         elif file.endswith('.exe'):
-            shutil.move(f'{source}\{file}', f'{source}\exes')
+            try:
+                shutil.move(f'{source}\{file}', f'{source}\exes')
+            except shutil.Error:
+                pass
 
         elif file.endswith('.jpg') or file.endswith('.png') or file.endswith('.jpeg'):
-            shutil.move(f'{source}\{file}', f'{source2}')
+            try:
+                shutil.move(f'{source}\{file}', f'{source2}')
+            except shutil.Error:
+                pass
         elif file.endswith('.docx') or file.endswith('.doc'):
-            shutil.move(f'{source}\{file}',f'{source}\word_docs' )
+            try:
+                shutil.move(f'{source}\{file}',f'{source}\word_docs' )
+            except shutil.Error:
+                pass
+
+            
         elif file.endswith('.pptx') or file.endswith('.ppt'):
-            shutil.move(f'{source}\{file}',f'{source}\ppts' )
+            try:
+                shutil.move(f'{source}\{file}',f'{source}\ppts' )
+            except shutil.Error:
+                pass
+        elif file.endswith('.zip'):
+            try:
+                shutil.move(f'{source}\{file}', f'{source}\{folder}')
+            except shutil.Error:
+                pass
+
+            
         
-schedule.every(30).minutes.do(filemover)
+schedule.every(1).seconds.do(filemover)
 
 while True:
     schedule.run_pending()
