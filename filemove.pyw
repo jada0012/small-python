@@ -10,6 +10,8 @@ files = os.listdir(source)
 source2 = r'D:\\Onedrive\\Pictures'
 folder = 'folderFolder'
 
+d
+
 def filemover():
 
 
@@ -17,41 +19,41 @@ def filemover():
         if file.endswith('.pdf'):
             try:
                 shutil.move(f'{source}\{file}', f'{source}\pdfs')
-            except shutil.Error:
+            except shutil.Error or PermissionError:
                 pass
 
         elif file.endswith('.exe'):
             try:
                 shutil.move(f'{source}\{file}', f'{source}\exes')
-            except shutil.Error:
+            except shutil.Error or PermissionError:
                 pass
 
         elif file.endswith('.jpg') or file.endswith('.png') or file.endswith('.jpeg'):
             try:
                 shutil.move(f'{source}\{file}', f'{source2}')
-            except shutil.Error:
+            except shutil.Error or PermissionError:
                 pass
         elif file.endswith('.docx') or file.endswith('.doc'):
             try:
                 shutil.move(f'{source}\{file}',f'{source}\word_docs' )
-            except shutil.Error:
+            except shutil.Error or PermissionError:
                 pass
 
             
         elif file.endswith('.pptx') or file.endswith('.ppt'):
             try:
                 shutil.move(f'{source}\{file}',f'{source}\ppts' )
-            except shutil.Error:
+            except shutil.Error or PermissionError:
                 pass
         elif file.endswith('.zip'):
             try:
                 shutil.move(f'{source}\{file}', f'{source}\{folder}')
-            except shutil.Error:
+            except shutil.Error or PermissionError:
                 pass
 
             
         
-schedule.every(1).seconds.do(filemover)
+schedule.every(1).minutes.do(filemover)
 
 while True:
     schedule.run_pending()

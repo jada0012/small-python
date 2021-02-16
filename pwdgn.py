@@ -13,4 +13,4 @@ def password(length):
     random.SystemRandom().shuffle(pwdlst)
     password = ''.join(pwdlst)
     return password
-print(password(12000))
+print(password(10))
