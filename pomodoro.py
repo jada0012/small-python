@@ -22,10 +22,26 @@ def countdown(t, mp3):
     sg.popup("time's up",auto_close=True, auto_close_duration=1,keep_on_top=True )
 
 def pomotimer():
+    s= pyin.inputYesNo('Do you know the time in seconds you want to work for.')
+    if s == 'yes':
+    
+        work = pyin.inputNum('enter the time in seconds you want to work for.')
+        sbreak =pyin.inputNum('enter the time in seconds you want to be on break for.')
+        lbreak = pyin.inputNum('enter the time in seconds you want to be on a longer break for.')
+    else:
+        hours = pyin.inputInt('Enter the amount of hours you will be working for.')
+        mins = pyin.inputInt('Enter the amount of minutes you will be working for.')
+        work = seconds(hours, mins)
 
-    work = pyin.inputNum('enter the time in seconds you want to work for')
-    sbreak =pyin.inputNum('enter the time in seconds you want to be on break for')
-    lbreak = pyin.inputNum('enter the time in seconds you want to be on a longer break for')
+        hours = pyin.inputInt('Enter the amount of hours you will be on break for.')
+        mins = pyin.inputInt('Enter the amount of minutes you will be on break for.')
+        sbreak = seconds(hours, mins)
+
+        hours = pyin.inputInt('Enter the amount of hours you will be on break for.')
+        mins = pyin.inputInt('Enter the amount of minutes you will be on break for.')
+        lbreak = seconds(hours, mins)
+
+
     times = pyin.inputNum('enter how many times you want to pomodoro for')
     n = pyin.inputNum('enter the amount of short breaks you want to have before a long break')
 
@@ -71,7 +87,7 @@ def interval_timer():
     times = pyin.inputInt('How many sets do you want to do?')
    
     n = pyin.inputNum('after how many sets do you have to do this thing?')
-    work3 = pyin.inputNum('Enter the time you will work for in seconds.') 
+    work3 = pyin.inputNum('Enter the time you will do this thing  for in seconds.') 
    
     work = pyin.inputNum('Enter the time you will work for in seconds.') 
     notwork = pyin.inputNum('Enter the time you will be on break for in seconds.')
