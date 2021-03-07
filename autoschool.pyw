@@ -78,7 +78,13 @@ schedule.every().friday.at("12:40").do(econclass)
 
 
 
-schedule.every().monday.at("13:15").do(mathclass)
+schedule.every().monday.at("13:15").do(mathclass)nastasia Steele: Okay.
+
+[Christians secrAndrea approaches Ana]
+
+Andrea: This way please.
+
+Anast
 
 schedule.every().wednesday.at("13:15").do(engclass)
 schedule.every().thursday.at("13:15").do(spanclass)
@@ -92,13 +98,6 @@ schedule.every().friday.at("14:25").do(addmathclass)
 
 schedule.every().tuesday.at("15:15").do(demClub)
 schedule.every().wednesday.at("15:25").do(cfya)
-
-
-
-
-
-
-
 
 
 while True:

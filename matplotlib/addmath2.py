@@ -7,7 +7,7 @@ x = np.array(data1.Year)
 y= np.array(data1.Percentage)
 m, b = np.polyfit(x, y, 1)
 project = np.array([2020, 2022, 2024, 2026])
-
++
 plt.xlabel('Year')
 plt.ylabel('Percentage Success')
 plt.xticks(x[::2])

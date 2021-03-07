@@ -10,7 +10,7 @@ files = os.listdir(source)
 source2 = r'D:\\Onedrive\\Pictures'
 folder = 'folderFolder'
 
-d
+
 
 def filemover():
 
