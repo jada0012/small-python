@@ -22,35 +22,42 @@ def countdown(t, mp3):
     sg.popup("time's up",auto_close=True, auto_close_duration=1,keep_on_top=True )
 
 def pomotimer():
-    s= pyin.inputYesNo('Do you know the time in seconds you want to work for.')
-    if s == 'yes':
-    
-        work = pyin.inputNum('enter the time in seconds you want to work for.')
-        sbreak =pyin.inputNum('enter the time in seconds you want to be on break for.')
-        lbreak = pyin.inputNum('enter the time in seconds you want to be on a longer break for.')
+    default = pyin.inputYesNo('Do you want to use the default settings?\n Work:25mins \n Short break: 5mins \n Long Break: 15 mins')
+    if default == 'yes':
+        work = 25*60
+        sbreak = 5*60
+        lbreak = 15*60
+        times = 100
+        mp3 = 'D:\\python\\small-python-projects\\takeabreak.mp3'
+        n=2
     else:
-        hours = pyin.inputInt('Enter the amount of hours you will be working for.')
-        mins = pyin.inputInt('Enter the amount of minutes you will be working for.')
-        work = seconds(hours, mins)
+        s= pyin.inputYesNo('Do you know the time in seconds you want to work for.')
+        if s == 'yes':
+        
+            work = pyin.inputNum('enter the time in seconds you want to work for.')
+            sbreak =pyin.inputNum('enter the time in seconds you want to be on break for.')
+            lbreak = pyin.inputNum('enter the time in seconds you want to be on a longer break for.')
+        else:
+            hours = pyin.inputInt('Enter the amount of hours you will be working for.')
+            mins = pyin.inputInt('Enter the amount of minutes you will be working for.')
+            work = seconds(hours, mins)
 
-        hours = pyin.inputInt('Enter the amount of hours you will be on break for.')
-        mins = pyin.inputInt('Enter the amount of minutes you will be on break for.')
-        sbreak = seconds(hours, mins)
+            hours = pyin.inputInt('Enter the amount of hours you will be on break for.')
+            mins = pyin.inputInt('Enter the amount of minutes you will be on break for.')
+            sbreak = seconds(hours, mins)
 
-        hours = pyin.inputInt('Enter the amount of hours you will be on break for.')
-        mins = pyin.inputInt('Enter the amount of minutes you will be on break for.')
-        lbreak = seconds(hours, mins)
+            hours = pyin.inputInt('Enter the amount of hours you will be on break for.')
+            mins = pyin.inputInt('Enter the amount of minutes you will be on break for.')
+            lbreak = seconds(hours, mins)
 
 
-    times = pyin.inputNum('enter how many times you want to pomodoro for')
-    n = pyin.inputNum('enter the amount of short breaks you want to have before a long break')
+        times = pyin.inputNum('enter how many times you want to pomodoro for')
+        n = pyin.inputNum('enter the amount of short breaks you want to have before a long break')
 
-    
-    choice = pyin.inputYesNo('Do you want to change the sound that plays when time is up?')
-    if choice== 'yes':
+        
         mp3 = sg.popup_get_file('search for the mp3 you want')
-    else:
-        mp3 = 'takeabreak.mp3'
+    
+        
 
     completed = 0
     
@@ -65,7 +72,9 @@ def pomotimer():
         countdown(sbreak, mp3)
         completed +=1
 
+
 def timer():
+
     s= pyin.inputYesNo('Do you know the time in seconds you want to exercise for')
     if s == 'yes':
         t = pyin.inputNum('Enter the time in seconds you want the timer to go for')
@@ -108,18 +117,31 @@ def interval_timer():
             countdown(notwork, mp3)
 
 
+def stopwatch():
+    t = 0
+    while True:
+        mins, secs = divmod(t, 60)
+        timer = '{:02d}:{:02d}'.format(mins, secs)
+        try:
+            print(timer, end='\r')
+            time.sleep(1)
+            t += 1
+        except KeyboardInterrupt:
+            input('press enter to continue')
 
 
-  
 
 
-timer_choice = pyin.inputMenu(['timer/alarm', 'interval timer', 'pomodoro timer'], prompt='Choose which kind of timer you want \n', numbered=True)
+timer_choice = pyin.inputMenu(['timer/alarm', 'interval timer', 'pomodoro timer', 'stopwatch'], prompt='Choose which kind of timer you want \n', numbered=True)
 if timer_choice == 'timer/alarm':
     timer()
 elif timer_choice == 'interval timer':
     interval_timer()
-else:
+elif timer_choice == 'pomodoro timer':
     pomotimer()
+else:
+    stopwatch()
+
 
 
 
