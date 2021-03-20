@@ -1,6 +1,7 @@
 import webbrowser
 import schedule
 import time
+import clipboard
 
 def mathclass():
     webbrowser.open_new_tab("https://zoom.us/j/98705093283?pwd=THZVUzNFNjlTMTFSQm1VVmF5ZWZmZz09&uname=Jada Dixon#success")
@@ -22,12 +23,18 @@ def engclass():
     webbrowser.open_new_tab("https://zoom.us/j/99837612071?pwd=VFZNSTZXdXBkMXRxMmxWT1B0aHM1Zz09&uname=Jada Dixon")
 def addmathclass():
     webbrowser.open_new_tab("https://zoom.us/j/94458157122?pwd=RDNONkNZazVxcS84dy9IVlk3aUtqQT09&uname=Jada Dixon#success")
-def test():
-    print("welp does this work")
+
 def demClub():
     webbrowser.open_new_tab("https://zoom.us/j/5826894117#success")
 def cfya():
     webbrowser.open_new_tab("https://zoom.us/j/99584273671?pwd=WisyTmp5M2pPcnEySUtvNHJ4RGxGUT09")
+
+def spanPrac():
+    webbrowser.open_new_tab("https://zoom.us/j/91346741102?pwd=RkpTeWpGRlcvSzRDTGlCalpvZmlBQT09")
+
+def send_meeting():
+    clipboard.copy("https://zoom.us/j/91346741102?pwd=RkpTeWpGRlcvSzRDTGlCalpvZmlBQT09 \n Here's the link guys.")
+
 
 schedule.every().monday.at("08:00").do(spanclass)
 schedule.every().tuesday.at("08:00").do(spanclass)
@@ -78,13 +85,8 @@ schedule.every().friday.at("12:40").do(econclass)
 
 
 
-schedule.every().monday.at("13:15").do(mathclass)nastasia Steele: Okay.
+schedule.every().monday.at("13:15").do(mathclass)
 
-[Christians secrAndrea approaches Ana]
-
-Andrea: This way please.
-
-Anast
 
 schedule.every().wednesday.at("13:15").do(engclass)
 schedule.every().thursday.at("13:15").do(spanclass)
@@ -94,11 +96,14 @@ schedule.every().monday.at("13:50").do(addmathclass)
 schedule.every().wednesday.at("13:50").do(addmathclass)
 
 schedule.every().friday.at("14:25").do(addmathclass)
+schedule.every().thursday.at("14:25").do(send_meeting)
+schedule.every().thursday.at("14:30").do(spanPrac)
 
 
 schedule.every().tuesday.at("15:15").do(demClub)
 schedule.every().wednesday.at("15:25").do(cfya)
 
+send_meeting()
 
 while True:
     schedule.run_pending()

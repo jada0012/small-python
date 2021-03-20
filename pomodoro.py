@@ -22,14 +22,14 @@ def countdown(t, mp3):
     sg.popup("time's up",auto_close=True, auto_close_duration=1,keep_on_top=True )
 
 def pomotimer():
-    default = pyin.inputYesNo('Do you want to use the default settings?\n Work:25mins \n Short break: 5mins \n Long Break: 15 mins')
+    default = pyin.inputYesNo('Do you want to use the default settings?\n Work:25mins \n Short break: 5mins \n Long Break: 15 mins\n')
     if default == 'yes':
         work = 25*60
         sbreak = 5*60
         lbreak = 15*60
         times = 100
         mp3 = 'D:\\python\\small-python-projects\\takeabreak.mp3'
-        n=2
+        n=3
     else:
         s= pyin.inputYesNo('Do you know the time in seconds you want to work for.')
         if s == 'yes':
@@ -63,6 +63,9 @@ def pomotimer():
     
     for i in range(1, times):
         if i != 0 and i % (n+1) == 0:
+            print(f'Session number {i}')
+            countdown(work, mp3)
+
             print('long break!')
             countdown(lbreak,  mp3)
         print(f'Session number {i}')
