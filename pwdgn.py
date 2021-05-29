@@ -13,4 +13,5 @@ def password(length):
     random.SystemRandom().shuffle(pwdlst)
     password = ''.join(pwdlst)
     return password
-print(password(10))
+len = input('how logn do you want the password to be')
+print(password(int(len)))

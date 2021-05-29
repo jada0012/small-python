@@ -68,13 +68,35 @@ def pomotimer():
 
             print('long break!')
             countdown(lbreak,  mp3)
+            
         print(f'Session number {i}')
         print('work')
         countdown(work, mp3)
         print('short break')
         countdown(sbreak, mp3)
         completed +=1
+def alt_pomodoro():
+    
+    
+    work = 30*60
+    sbreak = 5*60
+    lbreak = 20*60
+    times = 100
+    mp3 = 'D:\\python\\small-python-projects\\takeabreak.mp3'
+    n=2
+    
 
+    for i in range(1, times):
+
+        print(f'Session number {i}')
+        print('work')
+        countdown(work, mp3)
+        print('short break')
+        countdown(sbreak, mp3)
+        print('work')
+        countdown(work, mp3)
+        print('long break!')
+        countdown(lbreak, mp3)
 
 def timer():
 
@@ -135,13 +157,15 @@ def stopwatch():
 
 
 
-timer_choice = pyin.inputMenu(['timer/alarm', 'interval timer', 'pomodoro timer', 'stopwatch'], prompt='Choose which kind of timer you want \n', numbered=True)
+timer_choice = pyin.inputMenu(['timer/alarm', 'interval timer', 'pomodoro timer', 'stopwatch', 'alt pomodoro'], prompt='Choose which kind of timer you want \n', numbered=True)
 if timer_choice == 'timer/alarm':
     timer()
 elif timer_choice == 'interval timer':
     interval_timer()
 elif timer_choice == 'pomodoro timer':
     pomotimer()
+elif timer_choice == 'alt pomodoro':
+    alt_pomodoro()
 else:
     stopwatch()
 

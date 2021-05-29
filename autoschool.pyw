@@ -2,6 +2,9 @@ import webbrowser
 import schedule
 import time
 import clipboard
+import datetime
+import math
+import PySimpleGUI as sg 
 
 def mathclass():
     webbrowser.open_new_tab("https://zoom.us/j/98705093283?pwd=THZVUzNFNjlTMTFSQm1VVmF5ZWZmZz09&uname=Jada Dixon#success")
@@ -34,6 +37,32 @@ def spanPrac():
 
 def send_meeting():
     clipboard.copy("https://zoom.us/j/91346741102?pwd=RkpTeWpGRlcvSzRDTGlCalpvZmlBQT09 \n Here's the link guys.")
+
+
+def update_status():
+    today = datetime.datetime.now()
+    csec = datetime.datetime(2021,6,14)
+    freedom = datetime.datetime(2021, 7, 14)
+
+    p = csec-today
+    pain =math.ceil(p.total_seconds()/86400) 
+    f = freedom-today
+    free =math.ceil(f.total_seconds()/86400) 
+
+    clipboard.copy(f"{pain} days till pain; {free} days till freedom.")
+    print(f"{pain} days till pain; {free} days till freedom.")
+
+def consolidate_songs():
+    sg.popup('consolidate songs!')
+
+
+
+
+
+
+
+# update_status()
+    
 
 
 schedule.every().monday.at("08:00").do(spanclass)
@@ -102,6 +131,9 @@ schedule.every().thursday.at("14:30").do(spanPrac)
 
 schedule.every().tuesday.at("15:15").do(demClub)
 schedule.every().wednesday.at("15:25").do(cfya)
+
+# schedule.every().day.at("08:35").do(update_status)
+schedule.every().friday.at("23:45").do(consolidate_songs)
 
 send_meeting()
 

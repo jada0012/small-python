@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd 
 
-data1 = pd.read_csv('Book1.csv')
+data1 = pd.read_csv('D:\\python\\small-python-projects\\matplotlib\\Book1.csv')
 x = np.array(data1.Year1)
 y= np.array(data1.Percentage1)
 m, b = np.polyfit(x, y, 1)
