@@ -92,6 +92,38 @@ describe un  lugar de interés para los turistas en tu país.
 ¿De qué manera es la familia hispana similar a tu familia?
 ¿Quiénes son IOS miembros de tu familia?
 prefiere comer tu familia, en casa o en un restaurante? ¿Por qué?
+¿Cuántos nenes hay en tu familia?
+¿Con cuál miembro de tu familia con4'artes tus secretos y por qué?
+¿Por qué el día domingo es diferente en tu familia?
+¿Prefieres tener tu propio dormitorio? ¿Por qué?
+¿Puedes hablarme un pariente más viejo de tu farnilia?
+¿Cuáles las diferencias de personalidad entre tú y tus
+¿Qué es lo que más te gusta de tu familia?
+describe un fin de semana tipiCO en tu Casa,
+¿Cuándo es la graduación en tu escuela?
+¿Tienen ustedes baile de fin curso?
+¿donde tendrá lugar?
+¿Cómo vas a vestirte la ocasión?
+¿Cuál es la profesión que te parecx más atractiva? ¿Por qué?
+¿Cuáles las materias que más te prepararán pira e• profesión?
+¿Crees que algún dia tú serás buena profesor/a? ¿Por qué?
+¿Cuáles las características un buen estudiante?
+¿ En que temporada del año haces más compras y por qué?
+¿Es dificil seleccionar regalos para tu familia? ¿Por qué?
+ Qué regalo deseas comprarle a tu panente favorito su
+¿Cómo OMienes tu para hacer compras?
+¿Qué tipo de rol» prefieres comprar y qué?
+¿Cuáles las ventajas compras en un centro comercial?
+Aparte del supermercado, ¿dónde se pueden compar frutas y verduras en tu ciudad o pueblo?
+¿Recomiendas hacer compras por Internet? ¿Por qué?
+¿Cuánto rugas en transporte público todos los días?
+¿Tienes que viajar a la Ial campo con frecuencia? Por qué?
+¿Cómo es el servicio de transpone publico en tu cotnunidad?
+¿A qué horas hay más en la ciudad? ¿Por qué?
+De lo que satxs, ¿por qué es eficiente el metro como medio de transporte?
+¿Cuáles los dexumentos necesarios para ir viaje al extranjero?
+¿Cómo se puede comprar un boleto de viaje y hacer reservaciones en un hotel sin salir de casa?
+Si tuvieras la oportunidad de visitar un pais latinoamericano, ¿qué pais visitarías y qué?
 ¿En qué sale tu familia a comer fuera de casa?
 ¿Qué día(s) de la semana juntos los miembros de tu familia?
 ¿Qué Otras actividades hacen ustedes juntos?
@@ -374,9 +406,165 @@ De lo que satxs, ¿por qué es eficiente el metro como medio de transporte?
 ¿Cuáles los dexumentos necesarios para ir viaje al extranjero?
 ¿Cómo se puede comprar un boleto de viaje y hacer reservaciones en un hotel sin salir de casa?
 Si tuvieras la oportunidad de visitar un pais latinoamericano, ¿qué pais visitarías y qué?
-
-
-
-
-
+¿Cuántos nenes hay en tu familia?
+¿Con cuál miembro de tu familia con4'artes tus secretos y por qué?
+¿Por qué el día domingo es diferente en tu familia?
+¿Prefieres tener tu propio dormitorio? ¿Por qué?
+¿Puedes hablarme un pariente más viejo de tu farnilia?
+¿Cuáles las diferencias de personalidad entre tú y tus
+¿Qué es lo que más te gusta de tu familia?
+describe un fin de semana tipiCO en tu Casa,
+¿Cuándo es la graduación en tu escuela?
+¿Tienen ustedes baile de fin curso?
+¿donde tendrá lugar?
+¿Cómo vas a vestirte la ocasión?
+¿Cuál es la profesión que te parecx más atractiva? ¿Por qué?
+¿Cuáles las materias que más te prepararán pira e• profesión?
+¿Crees que algún dia tú serás buena profesor/a? ¿Por qué?
+¿Cuáles las características un buen estudiante?
+¿ En que temporada del año haces más compras y por qué?
+¿Es dificil seleccionar regalos para tu familia? ¿Por qué?
+ Qué regalo deseas comprarle a tu panente favorito su
+¿Cómo OMienes tu para hacer compras?
+¿Qué tipo de rol» prefieres comprar y qué?
+¿Cuáles las ventajas compras en un centro comercial?
+Aparte del supermercado, ¿dónde se pueden compar frutas y verduras en tu ciudad o pueblo?
+¿Recomiendas hacer compras por Internet? ¿Por qué?
+¿Cuánto rugas en transporte público todos los días?
+¿Tienes que viajar a la Ial campo con frecuencia? Por qué?
+¿Cómo es el servicio de transpone publico en tu cotnunidad?
+¿A qué horas hay más en la ciudad? ¿Por qué?
+De lo que satxs, ¿por qué es eficiente el metro como medio de transporte?
+¿Cuáles los dexumentos necesarios para ir viaje al extranjero?
+¿Cómo se puede comprar un boleto de viaje y hacer reservaciones en un hotel sin salir de casa?
+Si tuvieras la oportunidad de visitar un pais latinoamericano, ¿qué pais visitarías y qué?
+ Describe tu casa.
+ ¿En qué cuarto pasas más tiempo?
+ ¿Qué hay en este cuarto?
+ ¿Quién hace más tareas en tu casa?
+ ¿Qué hace esta persona?
+ ¿Qué piensas de tu familia?
+ Describe la comida favorita de tu familia.
+ Describe una celebración especial que tuviste con tu familia.
+ ¿A qué hora te levantas durante los días de escuela?
+ ¿Qué tienes que hacer antes de salir para la escuela?
+ ¿Cuándo llegas tarde a la escuela y por qué?
+ ¿Qué haces antes de tu primera clase en la escuela?
+ ¿Cuánto tiempo pasas los viernes haciendo los deberes?
+ ¿Dirías que tienes una vida interesante? ¿Por qué?
+ ¿Eres una persona ocupada? ¿Por qué?
+ ¿Qué cambio te gustaría hacer en tu rutina diaria? ¿Por qué?
+ ¿Qué actividades prefieres hacer durante la noche?
+ ¿Qué responsabilidades tienes en casa?
+ ¿De qué manera tus responsabilidades en casa afectan tus estudios?
+ ¿Con quién/quiénes comes en casa generalmente?
+ ¿Hasta qué hora duermes los fines de semana?
+ ¿Cómo te sientes cuando tienes que despertarte temprano?
+ ¿Qué te gusta comer de postre?
+ ¿Qué prefieres, hablar por teléfono o charlar en Internet?  ¿Por qué?
+ ¿Dónde está tu escuela?
+ ¿Te gusta esta escuela?  ¿Por qué sí/Por qué no?
+ Describe tu uniforme.
+ ¿Por qué estudias español?
+ ¿Te gusta ir a la asamblea?  ¿Por qué?
+ ¿Cuáles son los diferentes clubes en tu escuela?  ¿Cuándo se reúnen?
+ Describe tu horario de los lunes.
+ Si fueras director/directora, ¿qué cambios harías en tu escuela
+ ¿A qué hora te desayunas los fines de semana?
+ ¿Cuál es tu desayuno favorito?
+ ¿Con qué desayunas?
+ ¿Qué haces los fines de semana?
+ ¿Cuál es tu actividad favorita?
+ ¿Cuánto tiempo pasas en la computadora?
+ ¿Cuál es tu opinión de las personas que insultan a otras personas en la red?
+ ¿Crees que los jóvenes pasan demasiado tiempo en la computadora?  Explica.
+ ¿Has viajado en tu país o fuera de él?  ¿Adónde?
+ ¿Cuál es tu modo preferido de viajar?
+ ¿Has visitado algún parque que te haya impresionado? ¿Cuál?
+ ¿Cuál es la atracción principal de ese parque?
+ ¿Qué lugares de interés prefieren visitar los turistas en tu país?
+ ¿De dónde vienen la mayoría de los turistas que llegan a tu país?
+ ¿Cuál es la atracción principal de ese país o lugar?
+ ¿Crees que el turismo es algo bueno para tu país?  Explica.
+. ¿Cuándo te gusta ir de compras?
+ ¿Con quién te gusta ir de compras?  ¿Por qué?
+ ¿Qué cosas te gusta comprar?
+ ¿Dónde hacen las compras tus amigos?
+ Describe un día de compras con tus amigos.
+ ¿Qué se necesita para hacer compras en Internet?
+ ¿Tus padres y tú, encuentran lo que quieren en tu país?  ¿Por qué?
+ ¿Qué hacen cuando no encuentran lo que quieren?
+ ¿Dónde vives?
+ Describe tu casa.
+ ¿Cuántas personas hay en tu familia?
+ ¿Quién en tu familia utiliza el Internet?
+ ¿Para qué utiliza(n) el Internet?
+ ¿Qué actividades hace la familia junta?
+ ¿Qué te gusta y qué no te gusta de tu familia?
+ Describe un domingo típico en tu familia.
+ ¿Qué actividades prefieres hacer durante la noche?
+ ¿Qué responsabilidades tienes en casa?
+ ¿De qué manera tus responsabilidades en casa afectan tus estudios?
+ ¿Con quién/quiénes comes en casa generalmente?
+ ¿Hasta qué hora duermes los fines de semana?
+ ¿Cómo te sientes cuando tienes que despertarte temprano?
+ ¿Qué te gusta comer de postre?
+ ¿Qué prefieres, hablar por teléfono o charlar en Internet?  ¿Por qué?
+ ¿Dónde está tu escuela?
+ ¿Te gusta esta escuela?  ¿Por qué sí/Por qué no?
+ Describe tu uniforme.
+ ¿Por qué estudias español?
+ ¿Te gusta ir a la asamblea?  ¿Por qué?
+ ¿Cuáles son los diferentes clubes en tu escuela?  ¿Cuándo se reúnen?
+ Describe tu horario de los lunes.
+ Si fueras director/directora, ¿qué cambios harías en tu escuela?
+ ¿Crees que es necesario hacer ejercicios?  ¿Por qué?
+ ¿Cuáles son los beneficios de participar en un deporte?
+ ¿Cuál es tu grupo musical favorito?
+ ¿Por qué te gusta escuchar este grupo?
+ ¿Qué programas no te gusta ver en la televisión?
+ ¿Qué haces los sábados por la noche?
+ Dime algo sobre una película que has visto recientemente.
+ ¿Qué clase de novelas te gustan?  ¿Por qué?
+ ¿Cómo se puede viajar hoy en día?
+ ¿Por qué viaja la gente?
+ ¿A qué país/lugar te gustaría viajar?  ¿Por qué?
+ ¿Es fácil viajar entre las islas del Caribe?  Explica.
+ ¿Qué compran los turistas cuando visitan tu país?
+ ¿Qué lugares interesantes conoces en tu país o fuera de tu país?
+ ¿Crees que los estudiantes de español deben visitar un país hispanohablante?
+¿Para qué?
+ Describe unas vacaciones inolvidables.
+ ¿Qué tipo de libros te gusta leer?
+ ¿Cuál es tu libro favorito y por qué?
+ ¿Qué pasatiempo practicas a menudo?
+ ¿Qué haces antes de acostarte?
+ ¿Qué tareas domésticas hacen tus hermanos y hermanas?
+ ¿Qué tarea doméstica no le gusta hacer a tu mamá?
+ ¿Para qué usas la computadora en casa?
+ ¿Dime dos beneficios de usar la computadora.
+ ¿Viajas mucho? Explica.
+ ¿A qué lugares has viajado en tu país o fuera de tu país?
+ ¿Cuando haces turismo en tu país, ¿cómo viajas?
+ ¿Quién es la persona que viaja más en tu familia, y por qué?
+ ¿Qué preparativos se deben hacer para viajar?
+ ¿Por qué viaja una persona?
+ ¿Qué problemas pueden tener las personas que viajan?
+ ¿A qué país te gustaría viajar y por qué?
+ ¿Cuáles son tus asignaturas favoritas en el colegio?
+ ¿Cuáles son tus actividades extracurriculares?
+ ¿Te gusta el uniforme de tu escuela? ¿Por qué?
+ ¿Cuáles son tus planes para el futuro?
+ ¿Qué profesión te interesa estudiar y por qué?
+ ¿Qué asignaturas estudias que te ayudarán en esa profesión?
+ ¿Crees que los estudiantes deben asistir a clases durante las vacaciones de verano? ¿Por qué?
+ ¿Qué hacen los jóvenes después de terminar sus estudios en la escuela secundaria?
+ ¿Cuántas personas hay en tu familia? ¿Quiénes son?
+ ¿Quién es tu persona favorita en tu familia y por qué?
+ ¿Qué te gusta más de tu mamá?
+ ¿Con quién hablas de tus problemas? ¿Por qué?
+ ¿Qué actividades haces con tu familia?
+ ¿Qué hace tu familia en casa por la noche?
+ ¿Cuándo visitas a tus abuelos?
+ ¿Cómo celebraste tu cumpleaños el año pasado?
 

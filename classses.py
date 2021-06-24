@@ -29,7 +29,10 @@ class Car:
         return f"The {self.colour} car has travelled {distance} miles on this drive. The new mileage is {self.miles} miles. "
        
 
-
+class Baby:
+    def __init__(self, weight, sex):
+        self.sex = sex 
+        self.weight = weight
 
 car1 = Car('burgundy', 23423488238)
 car2 = Car('chartreuse', 99999)

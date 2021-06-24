@@ -2,11 +2,11 @@ import random
 from itertools import combinations
 import xlsxwriter as xl 
 
-with open ("D:\\python\\small-python-projects\\spanish\\orals2.txt", encoding="UTF-8") as o:
+with open ("/home/jada/Documents/python/small-python-projects/spanish/orals.txt", encoding="UTF-8") as o:
     questions = [line.rstrip() for line in o]
 
 
-workbook = xl.Workbook("orals30.xlsx")
+workbook = xl.Workbook("orals302.xlsx")
 worksheet = workbook.add_worksheet()
 
 row = 0
