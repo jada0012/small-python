@@ -34,7 +34,21 @@ class Baby:
         self.sex = sex 
         self.weight = weight
 
-car1 = Car('burgundy', 23423488238)
-car2 = Car('chartreuse', 99999)
-car3 = Car("teal", 2)
-print(car3.drive(122))
+# car1 = Car('burgundy', 23423488238)
+# car2 = Car('chartreuse', 99999)
+# car3 = Car("teal", 2)
+# print(car3.drive(122))
+
+class Pet:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def show(self):
+        print(f"My name is {self.name} and I am {self.age} years old")
+class Dog(Pet):
+    def speak(self):
+        print("Meow")
+
+g= Dog("crusty", 66)
+g.show()
+
