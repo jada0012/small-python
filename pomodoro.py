@@ -3,12 +3,14 @@ import time
 import PySimpleGUI as sg 
 import playsound 
 import pyinputplus as pyin 
-
+import requests
+ifttt_url = "https://maker.ifttt.com/trigger/timer/with/key/eBLWHg-p1txKna9zAC6NJDVn9Wx8KXXkh-mmb_M3J_h"
+    
 def seconds(hr,mins):
     sec = (hr*3600) + (mins*60)
     return sec
 
-def countdown(t, mp3):
+def countdown(t):
     while t:
         mins, secs = divmod(t,60)
         timer = '{:02d}:{:02d}'.format(mins, secs)
@@ -18,8 +20,10 @@ def countdown(t, mp3):
             t-= 1
         except KeyboardInterrupt:
             input('press enter to continue')            
-    playsound.playsound(mp3)
+    
     sg.popup("time's up",auto_close=True, auto_close_duration=1,keep_on_top=True )
+    requests.post(ifttt_url)
+    
 
 def pomotimer():
     default = pyin.inputYesNo('Do you want to use the default settings?\n Work:25mins \n Short break: 5mins \n Long Break: 15 mins\n')
@@ -28,7 +32,7 @@ def pomotimer():
         sbreak = 5*60
         lbreak = 15*60
         times = 100
-        mp3 = 'D:\\python\\small-python-projects\\takeabreak.mp3'
+        
         n=3
     else:
         s= pyin.inputYesNo('Do you know the time in seconds you want to work for.')
@@ -55,7 +59,7 @@ def pomotimer():
         n = pyin.inputNum('enter the amount of short breaks you want to have before a long break')
 
         
-        mp3 = sg.popup_get_file('search for the mp3 you want')
+        
     
         
 
@@ -64,16 +68,16 @@ def pomotimer():
     for i in range(1, times):
         if i != 0 and i % (n+1) == 0:
             print(f'Session number {i}')
-            countdown(work, mp3)
+            countdown(work  )
 
             print('long break!')
-            countdown(lbreak,  mp3)
+            countdown(lbreak)
             
         print(f'Session number {i}')
         print('work')
-        countdown(work, mp3)
+        countdown(work  )
         print('short break')
-        countdown(sbreak, mp3)
+        countdown(sbreak  )
         completed +=1
 def alt_pomodoro():
     
@@ -90,13 +94,13 @@ def alt_pomodoro():
 
         print(f'Session number {i}')
         print('work')
-        countdown(work, mp3)
+        countdown(work  )
         print('short break')
-        countdown(sbreak, mp3)
+        countdown(sbreak  )
         print('work')
-        countdown(work, mp3)
+        countdown(work  )
         print('long break!')
-        countdown(lbreak, mp3)
+        countdown(lbreak  )
 
 def timer():
 
@@ -104,42 +108,30 @@ def timer():
     if s == 'yes':
         t = pyin.inputNum('Enter the time in seconds you want the timer to go for')
     else:
-      hours = pyin.inputInt('Enter the amount of hours you will be working for')
-      mins = pyin.inputInt('Enter the amount of hours you will be working for')
-      t = seconds(hours, mins)
-        
+        hours = pyin.inputInt('Enter the amount of hours you will be working for')
+        mins = pyin.inputInt('Enter the amount of hours you will be working for')
+        t = seconds(hours, mins)
+    countdown(t  )
 
-    choice =pyin.inputYesNo('Do you want to change the default alarm sound for the timer?')
-    if choice == 'yes':
-        mp3 = sg.popup_get_file('Search for the sound file that you want')
-    else:
-        mp3 = 'takeabreak.mp3'   
-    countdown(t, mp3)
-   
 
 def interval_timer():
     times = pyin.inputInt('How many sets do you want to do?')
-   
+
     n = pyin.inputNum('after how many sets do you have to do this thing?')
     work3 = pyin.inputNum('Enter the time you will do this thing  for in seconds.') 
-   
+
     work = pyin.inputNum('Enter the time you will work for in seconds.') 
     notwork = pyin.inputNum('Enter the time you will be on break for in seconds.')
-    choice =pyin.inputYesNo('Do you want to change the default alarm sound for the timer?')
 
-    if choice == 'yes':
-        mp3 = sg.popup_get_file('Search for the sound file that you want')
-    else:
-        mp3 = 'takeabreak.mp3'
     for i in range(1,times):
         if i % int(n+1) == 0:
             print('break but fin')
-            countdown(work3, mp3)
+            countdown(work3  )
         else:
             print('work')
-            countdown(work, mp3)
+            countdown(work  )
             print('break')
-            countdown(notwork, mp3)
+            countdown(notwork  )
 
 
 def stopwatch():
@@ -156,20 +148,21 @@ def stopwatch():
 
 
 
+def main():
+    timer_choice = pyin.inputMenu(['timer/alarm', 'interval timer', 'pomodoro timer', 'stopwatch', 'alt pomodoro'], prompt='Choose which kind of timer you want \n', numbered=True)
+    if timer_choice == 'timer/alarm':
+        timer()
+    elif timer_choice == 'interval timer':
+        interval_timer()
+    elif timer_choice == 'pomodoro timer':
+        pomotimer()
+    elif timer_choice == 'alt pomodoro':
+        alt_pomodoro()
+    else:
+        stopwatch()
 
-timer_choice = pyin.inputMenu(['timer/alarm', 'interval timer', 'pomodoro timer', 'stopwatch', 'alt pomodoro'], prompt='Choose which kind of timer you want \n', numbered=True)
-if timer_choice == 'timer/alarm':
-    timer()
-elif timer_choice == 'interval timer':
-    interval_timer()
-elif timer_choice == 'pomodoro timer':
-    pomotimer()
-elif timer_choice == 'alt pomodoro':
-    alt_pomodoro()
-else:
-    stopwatch()
 
-
-
+if __name__ == "__main__":
+    main()
 
 
