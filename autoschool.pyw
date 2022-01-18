@@ -1,7 +1,7 @@
 import webbrowser
 import schedule
 import time
-import clipboard
+
 import datetime
 import math
 import PySimpleGUI as sg 
@@ -27,28 +27,16 @@ def consolidate_songs():
 
 
 
-
-
-
-
-# update_status()
-    
-
-
 schedule.every().monday.at("08:00").do(comstudies_class)
 schedule.every().tuesday.at("08:00").do(lit_class)
 #schedule.every().wednesday.at("08:00").do(spanclass)
 
 
-
-
-
-
-schedule.every().monday.at("09.10").do(soci_class)
-schedule.every().tuesday.at("09.10").do(soci_class)
-schedule.every().wednesday.at("09.10").do(pd_class)
-schedule.every().thursday.at("09.10").do(comsci_class)
-schedule.every().friday.at("09.10").do(lit_class)
+schedule.every().monday.at("09:10").do(soci_class)
+schedule.every().tuesday.at("09:10").do(soci_class)
+schedule.every().wednesday.at("09:10").do(pd_class)
+schedule.every().thursday.at("09:10").do(comsci_class)
+schedule.every().friday.at("09:10").do(lit_class)
 
 
 
@@ -79,8 +67,8 @@ schedule.every().tuesday.at("13:50").do(comstudies_class)
 schedule.every().tuesday.at("15:15").do(demClub)
 
 
-# schedule.every().day.at("08:35").do(update_status)
-schedule.every().friday.at("23:45").do(consolidate_songs)
+
+
 
 
 

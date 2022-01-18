@@ -1,7 +1,6 @@
 
 import time
 import PySimpleGUI as sg 
-import playsound 
 import pyinputplus as pyin 
 import requests
 ifttt_url = "https://maker.ifttt.com/trigger/timer/with/key/eBLWHg-p1txKna9zAC6NJDVn9Wx8KXXkh-mmb_M3J_h"
@@ -109,7 +108,7 @@ def timer():
         t = pyin.inputNum('Enter the time in seconds you want the timer to go for')
     else:
         hours = pyin.inputInt('Enter the amount of hours you will be working for')
-        mins = pyin.inputInt('Enter the amount of hours you will be working for')
+        mins = pyin.inputInt('Enter the amount of minutes you will be working for')
         t = seconds(hours, mins)
     countdown(t  )
 

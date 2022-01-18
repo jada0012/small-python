@@ -1,0 +1,12 @@
+    double price;
+    double newPrice;
+    double num;
+
+    printf("enter the price of the item");
+    scanf("lf", &price);
+    printf("enter a number");
+    scanf("lf", &num);
+
+    newPrice = (price*num) ; /* since the discount is 12, the new price would be (100-12)% of the original price and in order to find that, it was multiplied by 88/100 */
+    printf("the new price is %lf", newPrice);
+    return 0;

@@ -20,7 +20,7 @@ def filemover():
         if file.endswith('.pdf'):
             if Path(source/"pdfs"/file).is_file():
                 print(f'{file} already exists')
-                shutil.move(f"{source}\{file}", f'{source}\duplicates')
+                os.remove(f'{source}\{file}')
             else:
                 shutil.move(f'{source}\{file}', f'{source}\pdfs')
 
@@ -37,7 +37,8 @@ def filemover():
         elif file.endswith('.exe') or file.endswith('.msi'):
             if Path(source/"exes"/file).is_file():
                 print(f'{file} already exists')
-                shutil.move(f"{source}\{file}", f'{source}\duplicates')
+                os.remove(f'{source}\{file}')
+
             else:
                 shutil.move(f'{source}\{file}', f'{source}\exes')
 
@@ -54,7 +55,8 @@ def filemover():
         elif file.endswith('.jpg') or file.endswith('.png') or file.endswith('.jpeg'):
             if Path('{pic_folder}\\{file}').is_file():
                 print(f'{file} already exists')
-                shutil.move(f"{source}\{file}", f'{source}\duplicates')
+                os.remove(f'{source}\{file}')
+
             else:
                 shutil.move(f'{source}\{file}', f'{pic_folder}')
 
@@ -71,7 +73,8 @@ def filemover():
                 if Path(source/"word_docs"/file).is_file():
                     print(f'{file} already exists')
                     if not Path(source/"duplicates"/file).is_file():
-                        shutil.move(f"{source}\{file}", f'{source}\duplicates')
+                        os.remove(f'{source}\{file}')
+
                     else:
                         os.remove(Path(source/"duplicates"/file))
 
