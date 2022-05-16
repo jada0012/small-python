@@ -21,6 +21,9 @@ def lit_class():
     webbrowser.open_new_tab("https://zoom.us/j/97675841450?pwd=SVZtTmNKbzhodWUzem03VnZ4SXRIZz09&uname=Jada%20Dixon")
 def demClub():
     webbrowser.open_new_tab("https://zoom.us/j/6705180593?pwd=QW1ENCsya3ZVK1ZrQmtnYmFvS2FkZz09")
+def qubit():
+    webbrowser.open_new_tab("https://us06web.zoom.us/w/82142857879?tk=lNE1Q-WDp59IlWF_y7nelVVHnXbSW1FZelYU7X8Fib0.DQMAAAATIBiKlxZXN19Ld0otMVJEcW9hX1hxTUdQa0t3AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&pwd=L08xeW1jK01UMENSZ3hhSG9Bc2psdz09")
+
 
 def consolidate_songs():
     sg.popup('consolidate songs!')
@@ -65,8 +68,7 @@ schedule.every().tuesday.at("13:50").do(comstudies_class)
 
 
 schedule.every().tuesday.at("15:15").do(demClub)
-
-
+schedule.every().saturday.at("10:00").do(qubit)
 
 
 

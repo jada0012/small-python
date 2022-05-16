@@ -1,10 +1,10 @@
-
+import sys
 import time
 import PySimpleGUI as sg 
 import pyinputplus as pyin 
 import requests
-ifttt_url = "https://maker.ifttt.com/trigger/timer/with/key/eBLWHg-p1txKna9zAC6NJDVn9Wx8KXXkh-mmb_M3J_h"
-    
+
+
 def seconds(hr,mins):
     sec = (hr*3600) + (mins*60)
     return sec
@@ -21,7 +21,7 @@ def countdown(t):
             input('press enter to continue')            
     
     sg.popup("time's up",auto_close=True, auto_close_duration=1,keep_on_top=True )
-    requests.post(ifttt_url)
+    
     
 
 def pomotimer():
@@ -145,23 +145,45 @@ def stopwatch():
         except KeyboardInterrupt:
             input('press enter to continue')
 
-
+def exitconditions():
+    choice = pyin.inputYesNo("would you like to go back to the main menu? ")
+    if choice != "yes":
+        sys.exit()
+    else:
+        return choice
+    
 
 def main():
     timer_choice = pyin.inputMenu(['timer/alarm', 'interval timer', 'pomodoro timer', 'stopwatch', 'alt pomodoro'], prompt='Choose which kind of timer you want \n', numbered=True)
     if timer_choice == 'timer/alarm':
         timer()
+        exitconditions()
+        main()
+        
+
+
     elif timer_choice == 'interval timer':
         interval_timer()
+        exitconditions()
+        main()
+
     elif timer_choice == 'pomodoro timer':
         pomotimer()
+        exitconditions()
+        main()
     elif timer_choice == 'alt pomodoro':
+
         alt_pomodoro()
+        exitconditions()
+        main()
     else:
         stopwatch()
+        exitconditions()
+        main()
 
 
 if __name__ == "__main__":
     main()
+    
 
 
