@@ -1,4 +1,5 @@
 import string
+
 def cypher(message):
     encoded = ''
     alphabet = list(string.ascii_lowercase)
