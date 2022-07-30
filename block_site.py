@@ -1,94 +1,104 @@
-from cgitb import text
 import ctypes, sys
+from multiprocessing.sharedctypes import Value
+from datetime import datetime, date
 from tkinter import *
 from tkinter import ttk
 import time
 import re
 
-def is_admin():
-    try:
-        return ctypes.windll.shell32.IsUserAnAdmin()
-    except:
-        return False
-if is_admin():
-    blocklist = ['twitter.com', 'tumblr.com', 'discord.com', 'instagram.com', 'reddit.com']
-    redirect = '127.0.0.1'
-    host_path = r'C:\Windows\System32\drivers\etc\hosts'
-    def block():
-      
-        with open(host_path, 'r+') as hostfile:
-            
+
+blocklist = ['twitter.com', 'tumblr.com', 'discord.com', 'instagram.com', 'reddit.com']
+REDIRECT = '127.0.0.1'
+HOST_PATH = r'C:\Windows\System32\drivers\etc\hosts'
+
+
+class BlockSiteApp(Tk):
+    def __init__(self):
+        super().__init__()
+
+        self.title("Block Sites")
+        self.notebook = ttk.Notebook(self)
+
+        self.Frame1 = BasicBlock(self.notebook)
+        self.Frame2 = ScheduleBlock(self.notebook)
+        self.notebook.add(self.Frame1, text='no frills block')
+        self.notebook.add(self.Frame2, text='daily time block ')
+
+        self.notebook.grid(column=0, row=0)
+
+
+class BasicBlock(ttk.Frame):
+    def __init__(self, container):
+        super().__init__()
+        ttk.Button(self, text="Block", command=self.block).grid(column=0, row=0, columnspan=2)
+        ttk.Button(self, text="Unblock" ,command=self.unblock).grid(column=3, row=0, columnspan=2)
+
+    def block(self):
+        with open(HOST_PATH, 'r+') as hostfile:
             hosts = hostfile.read()
             for site in blocklist:
                 if site not in hosts:
-                    hostfile.write(redirect + " " + site + "\n")
-                    hostfile.write(redirect + " " + "www." + site + "\n")
-        
+                    hostfile.write(REDIRECT + " " + site + "\n")
+                    hostfile.write(REDIRECT + " " + "www." + site + "\n")
 
-    def unblock():
-        with open(host_path, 'r+') as hostfile:
+    def unblock(self):
+        with open(HOST_PATH, 'r+') as hostfile:
             lines = hostfile.readlines()
             hostfile.seek(0)
             for line in lines:
                 if not  any(site in line for site in blocklist):
                     hostfile.write(line)
                 hostfile.truncate()
+    
 
-    def validateTime(newval):
-        errmsg = ''
-        valid = re.match('\d{1,2}:\d{2}', newval) is not None
+
+class ScheduleBlock(ttk.Frame):
+    def __init__(self, container):
+        super().__init__()
+                
+        start_time_hours = StringVar()
+        end_time_hours = StringVar()
+        testVar = StringVar()
+        errMsg = StringVar()
+        # validate_time_wrapper = (app.register(self.validateTime), '%P', '%V')
+
+
+        ttk.Label(self, text="enter start time").grid(column=0, row=0, sticky=W)
+        ttk.Label(self, text="enter end time").grid(column=0, row=1, sticky=W)
+        ttk.Label(self, textvariable=testVar).grid(column=0, row=3)
+        ttk.Label(self, textvariable=errMsg).grid(column=0, row=4)
+
+        ttk.Entry(self, textvariable=start_time_hours, validate='key').grid(column=1, row=0)
+        ttk.Entry(self, textvariable=end_time_hours, validate='key', ).grid(column=1, row=1)
+        btn = ttk.Button(self, text='submit')
+            
+
+    def validateTime(self, newval, op):
+        valid = re.match('^[0-9]{1,2}:?[0-9]{2}$', newval) is not None
+        if op == 'key':
+            oknow = re.match('^[0-9]*:?[0-9]*$', newval) is not None and len(newval) <= 5
         
-
-
-    root = Tk()
-    root.title("block sites")
-    mynotebook = ttk.Notebook(root)
-    mynotebook.grid()
-
-
-    mainframe = ttk.Frame(root, width=300, height=300, padding="3 3 12 12")
-    mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
-    root.columnconfigure(0, weight=1)
-    root.columnconfigure(1, weight=1)
-    root.columnconfigure(2, weight=1)
-    root.columnconfigure(3, weight=1)
-    root.rowconfigure(0, weight=1)
-    root.rowconfigure(1, weight=1)
-
-
-
-    ttk.Button(mainframe, text="Block", command=block).grid(column=0, row=0, columnspan=2)
-    ttk.Button(mainframe, text="Unblock" ,command=unblock).grid(column=3, row=0, columnspan=2)
-    timeElapsed = StringVar()
-    label = ttk.Label(mainframe, text="time blocked: ", textvariable=timeElapsed)
-    label['textvariable'] = timeElapsed
-
-
-    frametwo = Frame(root,width=300, height=300, bg="blue")
-    frametwo.columnconfigure(0, weight=1)
-    frametwo.columnconfigure(1, weight=1)
-    frametwo.columnconfigure(2, weight=1)
-    frametwo.rowconfigure(0, weight=1)
-    frametwo.rowconfigure(1, weight=1)
-
-    start_time_hours = IntVar()
-    # start_time_mins = IntVar()
-    end_time_hours = IntVar()
-    # end_time_mins = IntVar()
-
-    ttk.Label(frametwo, text="enter start time").grid(column=0, row=0)
-    ttk.Label(frametwo, text="enter end time").grid(column=0, row=1)
-
-    ttk.Entry(frametwo, textvariable=start_time_hours).grid(column=1, row=0)
-    # ttk.Entry(frametwo, textvariable=start_time_mins).grid(column=2, row=0)
-    ttk.Entry(frametwo, textvariable=end_time_hours).grid(column=1, row=1)
-    # ttk.Entry(frametwo, textvariable=end_time_mins).grid(column=2, row=1)
-    mynotebook.add(mainframe, text="based")
-    mynotebook.add(frametwo, text="notbased")
-    root.mainloop()
+            if not oknow:
+                print(newval)
+                print('error')
+            return oknow
+        return valid
     
 
-    
-    
+
+def is_admin(): 
+    try:
+        return ctypes.windll.shell32.IsUserAnAdmin()
+    except:
+        return False
+
+if is_admin():
+    try:
+        app = BlockSiteApp()
+        app.mainloop()
+    except Exception as e:
+        print(e)
+        
 else:
     ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, " ".join(sys.argv), None, 1)
+    
