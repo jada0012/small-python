@@ -1,0 +1,37 @@
+DEBUG:root:this should go to the file praise jehovah if it works
+DEBUG:root:this should go to the file praise jehovah if it works
+ERROR:root:got error
+Traceback (most recent call last):
+  File "c:\Users\bobei\python\small-python\block_site.py", line 104, in <module>
+    app = BlockSiteApp()
+  File "c:\Users\bobei\python\small-python\block_site.py", line 30, in __init__
+    self.Frame2 = ScheduleBlock(self.notebook)
+  File "c:\Users\bobei\python\small-python\block_site.py", line 70, in __init__
+    validate_time_wrapper = (app.register(self.validateTime), '%P', '%V')
+NameError: name 'app' is not defined
+
+ERROR:root:got error
+Traceback (most recent call last):
+  File "c:\Users\bobei\python\small-python\block_site.py", line 103, in <module>
+    app = BlockSiteApp()
+  File "c:\Users\bobei\python\small-python\block_site.py", line 29, in __init__
+    self.Frame2 = ScheduleBlock(self.notebook)
+  File "c:\Users\bobei\python\small-python\block_site.py", line 69, in __init__
+    validate_time_wrapper = (app.register(self.validateTime), '%P', '%V')
+NameError: name 'app' is not defined
+ERROR:root:got error
+Traceback (most recent call last):
+  File "c:\Users\bobei\python\small-python\block_site.py", line 103, in <module>
+    app = BlockSiteApp()
+  File "c:\Users\bobei\python\small-python\block_site.py", line 29, in __init__
+    self.Frame2 = ScheduleBlock(self.notebook)
+  File "c:\Users\bobei\python\small-python\block_site.py", line 69, in __init__
+    validate_time_wrapper = (app.register(self.validateTime), '%P', '%V')
+NameError: name 'app' is not defined
+ERROR:root:got error
+Traceback (most recent call last):
+  File "c:\Users\bobei\python\small-python\block_site.py", line 104, in <module>
+    print(app.self)
+  File "C:\Program Files\Python310\lib\tkinter\__init__.py", line 2383, in __getattr__
+    return getattr(self.tk, attr)
+AttributeError: '_tkinter.tkapp' object has no attribute 'self'
