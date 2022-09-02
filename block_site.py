@@ -11,16 +11,13 @@ host_path = r'C:\Windows\System32\drivers\etc\hosts'
 
 
 def block():
-    
     with open(host_path, 'r+') as hostfile:
-        
         hosts = hostfile.read()
         for site in blocklist:
             if site not in hosts:
                 hostfile.write(redirect + " " + site + "\n")
                 hostfile.write(redirect + " " + "www." + site + "\n")
     
-
 def unblock():
     with open(host_path, 'r+') as hostfile:
         lines = hostfile.readlines()
@@ -29,14 +26,16 @@ def unblock():
             if not  any(site in line for site in blocklist):
                 hostfile.write(line)
             hostfile.truncate()
-
-
-
+    with open('stopwatch.txt', 'r+') as fp:
+        fp.seek(0)
+        fp.truncate()
 
 root = Tk()
 root.title("block sites")
 mynotebook = ttk.Notebook(root)
 mynotebook.grid()
+
+
 
 def validateTime(newval, op):
     valid = re.match('^[0-9]{1,2}:?[0-9]{2}$', newval) is not None
@@ -62,10 +61,42 @@ root.columnconfigure(3, weight=1)
 root.rowconfigure(0, weight=1)
 root.rowconfigure(1, weight=1)
 
+contents = StringVar()
+label = ttk.Label(mainframe, text="bruh")
+label['textvariable'] = contents
+contents.set('00:00')
+def stopwatch(time=0):
+    block()
+    global T 
+    T = time
+    mins, secs = divmod(time, 60)
+    timer = ('{:02d}:{:02d}').format(mins, secs)
+    contents.set(f'{timer}')
+    root.after(1000, increment)
+
+def increment():
+    global T
+    T += 1
+    print('called')
+    print(T)
+    stopwatch(T)
 
 
-ttk.Button(mainframe, text="Block", command=block).grid(column=0, row=0, columnspan=2)
+ttk.Button(mainframe, text="Block", command=stopwatch).grid(column=0, row=0, columnspan=2)
+# ttk.Button(mainframe, text="Block", command=wrapper).grid(column=0, row=0, columnspan=2)
 ttk.Button(mainframe, text="Unblock" ,command=unblock).grid(column=3, row=0, columnspan=2)
+label.grid(column=0, row=2)
+
+def checkTimes(starttime, endtime):
+    if (datetime.now() > starttime) and (datetime.now() < endtime):
+        status = 'you are in the blocking hours'
+        block()
+
+    else:
+        status = 'you are not in the blocking hours'
+
+        unblock()
+    return status
 
 def testStuff(*args):
     try:
@@ -88,18 +119,10 @@ def testStuff(*args):
         starttime = datetime(current_year, current_month, current_day, int(starthours), int(startmins))
         endtime = datetime(current_year, current_month, end_day, int(endhours), int(endmins))
 
+        checkTimes(starttime, endtime)
 
 
-        if (datetime.now() > starttime) and (datetime.now() < endtime):
-            status = 'you are in the blocking hours'
-            block()
-        else:
-            status = 'you are not in the blocking hours'
-            unblock()
 
-
-        print(f'{datetime.now()=} {current_day=}, {end_day=}')
-        testVar.set(status)
     except ValueError:
         pass
 
@@ -134,6 +157,8 @@ btn.state(['disabled'])
 mynotebook.add(mainframe, text="indefinite block")
 mynotebook.add(frametwo, text="time-based block")
 
+
+
 def is_admin():
     try:
         return ctypes.windll.shell32.IsUserAnAdmin()
@@ -141,11 +166,7 @@ def is_admin():
         return False
 
 if is_admin():
-    
     root.mainloop()
-    
-
-    
     
 else:
     ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, " ".join(sys.argv), None, 1)
