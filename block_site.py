@@ -1,16 +1,17 @@
 import ctypes, sys
-from multiprocessing.sharedctypes import Value
 from datetime import datetime, date
 from tkinter import *
 from tkinter import ttk
-import time
 import re
-blocklist = ['twitter.com', 'tumblr.com', 'discord.com', 'instagram.com', 'reddit.com']
+blocklist = ['twitter.com', 'tumblr.com', 'instagram.com', 'reddit.com']
 redirect = '127.0.0.1'
 host_path = r'C:\Windows\System32\drivers\etc\hosts'
-
+global Running 
+Running = True
 
 def block():
+    global Running
+    Running = True
     with open(host_path, 'r+') as hostfile:
         hosts = hostfile.read()
         for site in blocklist:
@@ -18,18 +19,20 @@ def block():
                 hostfile.write(redirect + " " + site + "\n")
                 hostfile.write(redirect + " " + "www." + site + "\n")
     
-def unblock():
-    with open(host_path, 'r+') as hostfile:
-        lines = hostfile.readlines()
-        hostfile.seek(0)
-        for line in lines:
-            if not  any(site in line for site in blocklist):
-                hostfile.write(line)
-            hostfile.truncate()
-    with open('stopwatch.txt', 'r+') as fp:
-        fp.seek(0)
-        fp.truncate()
+# def unblock():
+#     global Running
+#     Running = False
+#     print(Running)
+#     with open(host_path, 'r+') as hostfile:
+#         lines = hostfile.readlines()
+#         hostfile.seek(0)
+#         for line in lines:
+#             if not  any(site in line for site in blocklist):
+#                 hostfile.write(line)
+#             hostfile.truncate()
 
+def grim():
+    pass
 root = Tk()
 root.title("block sites")
 mynotebook = ttk.Notebook(root)
@@ -65,26 +68,26 @@ contents = StringVar()
 label = ttk.Label(mainframe, text="bruh")
 label['textvariable'] = contents
 contents.set('00:00')
+
 def stopwatch(time=0):
-    block()
-    global T 
-    T = time
-    mins, secs = divmod(time, 60)
-    timer = ('{:02d}:{:02d}').format(mins, secs)
-    contents.set(f'{timer}')
-    root.after(1000, increment)
+    global Running
+    if Running: 
+        block()
+        global T 
+        T = time
+        mins, secs = divmod(time, 60)
+        timer = ('{:02d}:{:02d}').format(mins, secs)
+        contents.set(f'{timer}')
+        root.after(1000, increment)
 
 def increment():
     global T
     T += 1
-    print('called')
-    print(T)
     stopwatch(T)
 
 
 ttk.Button(mainframe, text="Block", command=stopwatch).grid(column=0, row=0, columnspan=2)
-# ttk.Button(mainframe, text="Block", command=wrapper).grid(column=0, row=0, columnspan=2)
-ttk.Button(mainframe, text="Unblock" ,command=unblock).grid(column=3, row=0, columnspan=2)
+ttk.Button(mainframe, text="Unblock" ,command=grim).grid(column=3, row=0, columnspan=2)
 label.grid(column=0, row=2)
 
 def checkTimes(starttime, endtime):
