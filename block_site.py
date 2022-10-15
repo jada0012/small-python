@@ -3,7 +3,8 @@ from datetime import datetime, date
 from tkinter import *
 from tkinter import ttk
 import re
-blocklist = ['twitter.com', 'tumblr.com', 'instagram.com', 'reddit.com']
+blocklist = ['twitter.com', 'tumblr.com', 'discord.com', 'instagram.com']
+unblocklist = ['discord.com', 'instagram.com']
 redirect = '127.0.0.1'
 host_path = r'C:\Windows\System32\drivers\etc\hosts'
 global Running 
@@ -19,17 +20,17 @@ def block():
                 hostfile.write(redirect + " " + site + "\n")
                 hostfile.write(redirect + " " + "www." + site + "\n")
     
-# def unblock():
-#     global Running
-#     Running = False
-#     print(Running)
-#     with open(host_path, 'r+') as hostfile:
-#         lines = hostfile.readlines()
-#         hostfile.seek(0)
-#         for line in lines:
-#             if not  any(site in line for site in blocklist):
-#                 hostfile.write(line)
-#             hostfile.truncate()
+def unblock():
+    global Running
+    Running = False
+    print(Running)
+    with open(host_path, 'r+') as hostfile:
+        lines = hostfile.readlines()
+        hostfile.seek(0)
+        for line in lines:
+            if not  any(site in line for site in unblocklist):
+                hostfile.write(line)
+            hostfile.truncate()
 
 def grim():
     pass
@@ -87,7 +88,7 @@ def increment():
 
 
 ttk.Button(mainframe, text="Block", command=stopwatch).grid(column=0, row=0, columnspan=2)
-ttk.Button(mainframe, text="Unblock" ,command=grim).grid(column=3, row=0, columnspan=2)
+ttk.Button(mainframe, text="Unblock" ,command=unblock).grid(column=3, row=0, columnspan=2)
 label.grid(column=0, row=2)
 
 def checkTimes(starttime, endtime):
