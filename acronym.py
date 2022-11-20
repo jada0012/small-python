@@ -9,4 +9,4 @@ def acronym(words):
     return acronyms
 
 
-print(acronym('the lazy bum'))
+print(acronym("the lazy bum"))

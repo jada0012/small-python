@@ -6,39 +6,38 @@ load_dotenv()
 
 SCOPE= "user-read-private, playlist-modify-private, playlist-modify-public, playlist-read-private, user-library-read, user-read-currently-playing, user-follow-modify, user-follow-read, user-read-recently-played"
 sp =  spotipy.Spotify(auth_manager = SpotifyOAuth(client_id=os.getenv('CLIENT_ID'), client_secret=os.getenv('CLIENT_SECRET'), redirect_uri="https://example.com", scope = SCOPE))
-
-NAME = sp.artist("7AC976RDJzL2asmZuz7qil")['name']
+ARTIST_ID = input("enter the artist id. ")
+NAME = sp.artist(ARTIST_ID)['name']
 print(NAME)
-
+options = ['album', 'single']
 sp.user_playlist_create(
     user="5kbehkqoyiok15qrj7uxo55d4",
-    name = f"the complete discography of {NAME}"
+    name = f"{NAME}: the complete discography"
    
 )
+
 playlists = sp.current_user_playlists()
 for i in playlists['items']:
-    if i['name'] == f"the complete discography of {NAME}":
+    if i['name'] == f"{NAME}: the complete discography":
         PLAYLIST_ID =  i['id']
-def get_artist_albums(id):
-    results = sp.artist_albums(id, album_type='album')
+def get_artist_albums(id, album_type):
+    results = sp.artist_albums(id, album_type=album_type)
     albums = results['items']
     while results['next']:
         results = sp.next(results)
         albums.extend(results['items'])
     return albums
 tracklist = []
+addedtoplaylist = []
+for option in options:
+    for i in get_artist_albums(ARTIST_ID, option):
+        for j in sp.album_tracks(i['id'])['items']:
+            if j is not None:
+                tracklist.append(j['id'])
+n = 100
+x = [tracklist[i:i+n] for i in range(0, len(tracklist), n)]  
+for i in x:
+    sp.playlist_add_items(playlist_id=PLAYLIST_ID, items=i)
 
-for i in get_artist_albums("7AC976RDJzL2asmZuz7qil"):
-    for j in sp.album_tracks(i['id'])['items']:
-
-        if j is not None:
-            tracklist.append(j['id'])
-            # # sp.playlist_add_items(playlist_id=PLAYLIST_ID, items=tracklist)
-            if len(tracklist) == 100:
-                sp.playlist_add_items(playlist_id=PLAYLIST_ID, items=tracklist)
-                tracklist = []
-            
-            
-sp.playlist_add_items(playlist_id=PLAYLIST_ID, items=tracklist)
 
 

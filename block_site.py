@@ -4,7 +4,7 @@ from tkinter import *
 from tkinter import ttk
 import re
 blocklist = ['twitter.com', 'tumblr.com', 'discord.com', 'instagram.com']
-unblocklist = ['discord.com', 'instagram.com']
+unblocklist = [ 'discord.com', 'instagram.com', 'tumblr.com']
 redirect = '127.0.0.1'
 host_path = r'C:\Windows\System32\drivers\etc\hosts'
 global Running 
