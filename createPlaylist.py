@@ -30,7 +30,7 @@ for track in get_playlist_tracks(id):
     inplaylist.append(trackid)
 
 li = range(0, len(inplaylist))
-chosen = random.sample(li,11)
+chosen = random.sample(li,10)
 chosenid = []
 for i in chosen:
     chosenid.append(inplaylist[i])

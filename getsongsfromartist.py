@@ -6,7 +6,17 @@ load_dotenv()
 
 SCOPE= "user-read-private, playlist-modify-private, playlist-modify-public, playlist-read-private, user-library-read, user-read-currently-playing, user-follow-modify, user-follow-read, user-read-recently-played"
 sp =  spotipy.Spotify(auth_manager = SpotifyOAuth(client_id=os.getenv('CLIENT_ID'), client_secret=os.getenv('CLIENT_SECRET'), redirect_uri="https://example.com", scope = SCOPE))
-ARTIST_ID = input("enter the artist id. ")
+
+
+urlentered = input("enter the artist id. ")
+first = urlentered.rfind("/")
+end = urlentered.rfind("?")
+print(first)
+print(end)
+ARTIST_ID = urlentered[first+1:end]
+
+print(ARTIST_ID)
+
 NAME = sp.artist(ARTIST_ID)['name']
 print(NAME)
 options = ['album', 'single']
@@ -15,6 +25,7 @@ sp.user_playlist_create(
     name = f"{NAME}: the complete discography"
    
 )
+
 
 playlists = sp.current_user_playlists()
 for i in playlists['items']:
