@@ -3,8 +3,7 @@ from datetime import datetime, date
 from tkinter import *
 from tkinter import ttk
 import re
-blocklist = ['twitter.com', 'tumblr.com', 'discord.com', 'instagram.com']
-unblocklist = [ 'discord.com', 'instagram.com', 'tumblr.com', 'twitter.com']
+blocklist = ['twitter.com', 'tumblr.com']
 redirect = '127.0.0.1'
 host_path = r'C:\Windows\System32\drivers\etc\hosts'
 global Running 
@@ -28,7 +27,7 @@ def unblock():
         lines = hostfile.readlines()
         hostfile.seek(0)
         for line in lines:
-            if not  any(site in line for site in unblocklist):
+            if not any(site in line for site in blocklist):
                 hostfile.write(line)
             hostfile.truncate()
 
