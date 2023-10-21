@@ -7,3 +7,4 @@ def piglatin(word):
         return '%s-way'%(word)
     else:
         return '%s-%say'%(word[1:], word[0])
+print(piglatin("mab"))
