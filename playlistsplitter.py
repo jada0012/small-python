@@ -65,6 +65,7 @@ for count, sublist in enumerate(sublists):
     for i in songs:
         if i['owner']['display_name'] == "jada":
             playlist_dict[i['name']] = i['id']
+    print(playlist_dict)
     # # sp.playlist_add_items()
     NEWPLAYLIST_ID = playlist_dict[playlist_name]
     print(NEWPLAYLIST_ID)

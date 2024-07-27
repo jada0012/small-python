@@ -7,6 +7,7 @@ import random
 import math
 import pyinputplus as pyin
 load_dotenv()
+
 SCOPE= "user-read-private, playlist-modify-private, playlist-modify-public, playlist-read-private, user-library-read, user-read-currently-playing, user-follow-modify, user-follow-read, user-read-recently-played"
 sp =  spotipy.Spotify(auth_manager = SpotifyOAuth(client_id=os.getenv('CLIENT_ID'), client_secret=os.getenv('CLIENT_SECRET'), redirect_uri="https://example.com", scope = SCOPE))
 print("welcome to the player-sub-set-inator!!!")
@@ -86,15 +87,20 @@ def get_playlist_tracks(playlist_id):
 #             f.write(trackid)
 #             f.write("\n")
 clear = input("start again from scratch?")
-if clear == "yes":
+print(clear)
+if clear == "y":
     sp.playlist_replace_items(playlist_id=PLAYLIST_ID, items=[])
-    
-songs = input("enter a list of the genres you want from the following list: bubblegrunge, jazz, words, postrock, rockstone, soca, spanish, eurobeat, grime, lofipop, feels80, stoner, gothicsymphonic, reggae")
+
+
+path = "./songs"
+dir_list = os.listdir(path)
+print(dir_list)
+songs = input("enter a list of the genres you want from the previous list:")
 songlist = songs.split(" ")
 print(songlist)
 for i in songlist:
     if i != "":
-        with open("%s.txt" %i, "r") as f:
+        with open("./songs/%s.txt" %i, "r") as f:
             instrumentals = f.readlines()
 
         instrumentals = [x.rstrip() for x in instrumentals]

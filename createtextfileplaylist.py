@@ -29,7 +29,7 @@ def get_playlist_tracks(playlist_id):
 
 def writetofile(playlist_id, nameoffile):
 
-    with open("%s.txt" %nameoffile, "w") as f:
+    with open("./songs/%s.txt" %nameoffile, "w") as f:
         print("this works!")
         for track in get_playlist_tracks(playlist_id):
             trackid  = track['track']['id']
